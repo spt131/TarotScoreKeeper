@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Game" representedClassName="Game" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numberOfPlayers" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="hasPlayers" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Player" inverseName="playsGame" inverseEntity="Player" syncable="YES"/>
+    </entity>
+    <entity name="GameRoundPlayer" representedClassName="GameRoundPlayer" syncable="YES">
+        <attribute name="contractPlayer" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="contractType" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="defensePlayer" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="partnerPlayer" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="pointsFor" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="pointsNeeded" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="roundNum" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="win" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="forPlayer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="playsRounds" inverseEntity="Player" syncable="YES"/>
+    </entity>
+    <entity name="Player" representedClassName="Player" syncable="YES">
+        <attribute name="currentRound" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="currentScore" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="playsGame" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="hasPlayers" inverseEntity="Game" syncable="YES"/>
+        <relationship name="playsRounds" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="GameRoundPlayer" inverseName="forPlayer" inverseEntity="GameRoundPlayer" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Game" positionX="-297" positionY="27" width="128" height="103"/>
+        <element name="GameRoundPlayer" positionX="135" positionY="27" width="128" height="193"/>
+        <element name="Player" positionX="-83" positionY="35" width="128" height="118"/>
+    </elements>
+</model>

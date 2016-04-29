@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="newRoundSegmentCell" id="KGk-i7-Jjw" customClass="NewRoundSegmentTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PlayerName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfn-cS-07L">
+                        <rect key="frame" x="8" y="11" width="150" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="7Ao-xB-XoT">
+                        <rect key="frame" x="112" y="8" width="200" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="Pn9-gh-9R5"/>
+                        </constraints>
+                        <segments>
+                            <segment title="Taker"/>
+                            <segment title="Partner"/>
+                            <segment title="Defense"/>
+                        </segments>
+                    </segmentedControl>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="7Ao-xB-XoT" secondAttribute="trailing" constant="8" id="1Lb-gK-9JL"/>
+                    <constraint firstItem="7Ao-xB-XoT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="EwH-PN-AMU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="playerNameLabel" destination="nfn-cS-07L" id="Xme-IY-4HX"/>
+                <outlet property="segmentedControl" destination="7Ao-xB-XoT" id="5Dk-hN-jXU"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
